@@ -23,9 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
@@ -37,22 +37,22 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::controller(CategoryController::class)->group(function () {
         Route::prefix('category')->group(function () {
-            Route::get('allCategory', 'index')->name('allCategory');
-            Route::get('addCategory', 'add')->name('addCategory');
+            Route::get('/all', 'index')->name('allCategory');
+            Route::get('/add', 'add')->name('addCategory');
         });
     });
 
     Route::controller(SubCategoryController::class)->group(function () {
         Route::prefix('subCategory')->group(function () {
-            Route::get('allSubCategory', 'index')->name('allSubCategory');
-            Route::get('addSubCategory', 'add')->name('addSubCategory');
+            Route::get('/all', 'index')->name('allSubCategory');
+            Route::get('/add', 'add')->name('addSubCategory');
         });
     });
 
     Route::controller(ProductController::class)->group(function () {
         Route::prefix('product')->group(function () {
-            Route::get('allProducts', 'index')->name('allProducts');
-            Route::get('addProducts', 'add')->name('addProducts');
+            Route::get('/all', 'index')->name('allProducts');
+            Route::get('/add', 'add')->name('addProducts');
         });
     });
 
