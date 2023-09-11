@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('subcategory', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('product_count');
+            $table->integer('product_count')->default(0);
             $table->bigInteger('category_id');
             $table->string('category_name');
             $table->string('slug');
