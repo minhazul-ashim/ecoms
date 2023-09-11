@@ -17,6 +17,7 @@ name [varchar]
 slug (url) [varchar]
 product_count(products under subcat) [varchar]
 category_id (fk)
+category_name [varchar]
 
 ----------------------------------------------------------------
 
@@ -29,9 +30,11 @@ brief_desc [varchar]
 price [float]
 category_id (fk)
 subcat_id (fk)
-product_count [integer]
+stock [integer]
 product_image
 slug (url) [varchar]
+category_name [varchar]
+subcat_name [varchar]
 
 ----------------------------------------------------------------
 
