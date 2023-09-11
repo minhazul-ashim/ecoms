@@ -5,3 +5,5 @@
 5. Added Controllers [Category, SubCategory, Product, Order], and these Controllers have two methods, index and add.
 6. Added Corresponding Routes, and Organized those routes with middlewares group, controller group and routes group respectively.
 7. Added Blade templates and organized folder structure for the admin dashboard.
+8. Corresponding named Routes are attached to the navigation side bar links.
+9. Added Prettier for better readable code structure and formatting.
