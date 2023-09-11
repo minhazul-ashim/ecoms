@@ -10,3 +10,14 @@
 10. Added Dynamic Page Title
 11. Added UI for Add and List Catgories, Subcategories and Products.
 12. Add Migration files according to the TableStructure.md file. Three migration files with the drop class as well for rollback convenience.
+
+13. Add three models for Category, Subcategory and Products table for the CRUD operations. And populated with the 'protected $fillable' array varible of strings to identify the properties which must be filled when creating a row of that table.
+syntax is, 
+
+protected $fillable = [
+    "name",
+    "slug"
+    ... etc
+]
+
+14.
