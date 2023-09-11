@@ -8,3 +8,5 @@
 8. Corresponding named Routes are attached to the navigation side bar links.
 9. Added Prettier for better readable code structure and formatting.
 10. Added Dynamic Page Title
+11. Added UI for Add and List Catgories, Subcategories and Products.
+12. Add Migration files according to the TableStructure.md file. Three migration files with the drop class as well for rollback convenience.
