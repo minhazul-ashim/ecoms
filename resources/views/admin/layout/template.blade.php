@@ -73,24 +73,40 @@
 						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 							<!-- Add icons to the links using the .nav-icon class
 								with font-awesome or any other icon font library -->
+
 							<li class="nav-item">
-								<a href="dashboard.html" class="nav-link">
+								<a href="{{route('adminDashboard')}}" class="nav-link">
 									<i class="nav-icon fas fa-tachometer-alt"></i>
 									<p>Dashboard</p>
 								</a>																
 							</li>
+
 							<li class="nav-item">
-								<a href="categories.html" class="nav-link">
+								<a href="{{route('allCategory')}}" class="nav-link">
 									<i class="nav-icon fas fa-file-alt"></i>
 									<p>Category</p>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="subcategory.html" class="nav-link">
+								<a href="{{route('addCategory')}}" class="nav-link">
+									<i class="nav-icon fas fa-file-alt"></i>
+									<p>Add Category</p>
+								</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="{{route('allSubCategory')}}" class="nav-link">
 									<i class="nav-icon fas fa-file-alt"></i>
 									<p>Sub Category</p>
 								</a>
 							</li>
+							<li class="nav-item">
+								<a href="{{route('addSubCategory')}}" class="nav-link">
+									<i class="nav-icon fas fa-file-alt"></i>
+									<p>Add SubCategory</p>
+								</a>
+							</li>
+
 							<li class="nav-item">
 								<a href="brands.html" class="nav-link">
 									<svg class="h-6 nav-icon w-6 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
@@ -99,10 +115,17 @@
 									<p>Brands</p>
 								</a>
 							</li>
+
 							<li class="nav-item">
-								<a href="products.html" class="nav-link">
+								<a href="{{route('allProducts')}}" class="nav-link">
 									<i class="nav-icon fas fa-tag"></i>
 									<p>Products</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{route('addProducts')}}" class="nav-link">
+									<i class="nav-icon fas fa-tag"></i>
+									<p>Add Products</p>
 								</a>
 							</li>
 							
@@ -112,13 +135,21 @@
 									<i class="fas fa-truck nav-icon"></i>
 									<p>Shipping</p>
 								</a>
-							</li>							
+							</li>
+
 							<li class="nav-item">
 								<a href="orders.html" class="nav-link">
 									<i class="nav-icon fas fa-shopping-bag"></i>
 									<p>Orders</p>
 								</a>
 							</li>
+							<li class="nav-item">
+								<a href="orders.html" class="nav-link">
+									<i class="nav-icon fas fa-shopping-bag"></i>
+									<p>Add Orders</p>
+								</a>
+							</li>
+
 							<li class="nav-item">
 								<a href="discount.html" class="nav-link">
 									<i class="nav-icon  fa fa-percent" aria-hidden="true"></i>
