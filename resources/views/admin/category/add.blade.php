@@ -1,5 +1,7 @@
 @extends('admin.layout.template')
-
+@section('page_title')
+Add Category | ECOMS
+@endsection
 @section('content')
     <section class="content-header">
         <div class="container-fluid my-2">

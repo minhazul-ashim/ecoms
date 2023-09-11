@@ -7,3 +7,4 @@
 7. Added Blade templates and organized folder structure for the admin dashboard.
 8. Corresponding named Routes are attached to the navigation side bar links.
 9. Added Prettier for better readable code structure and formatting.
+10. Added Dynamic Page Title
