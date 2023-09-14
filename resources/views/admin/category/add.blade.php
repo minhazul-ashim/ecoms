@@ -19,7 +19,17 @@
     <!-- Main content -->
     <section class="content">
         <!-- Default box -->
-        <form action="">
+        <form action="{{ route('storeCategory') }}" method="POST">
+            @csrf
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)                           
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-body">
@@ -36,7 +46,7 @@
                 </div>
                 <div class="pb-5 pt-3">
                     <button class="btn btn-primary" type="submit">Add Category</button>
-                    <a href="brands.html" class="btn btn-outline-dark ml-3">Cancel</a>
+                    <a href="" class="btn btn-outline-dark ml-3">Cancel</a>
                 </div>
             </div>
         </form>

@@ -20,4 +20,17 @@ protected $fillable = [
     ... etc
 ]
 
-14.
+14. Add New Category to the database.
+- Create a new named route for category creation and the route must be a POST route. And assign a controller method.
+- Use that route in the view form as action="{{route('name')}}". And also pass the csrf token just after the form tag and using @csrf keyword.
+- Create the controller method and accept the request parameters and body. 
+- Validate the neccessary date and show error message if validation is failed.
+- Then insert the data in the db using ModelName::insert method.
+- Upon successful completion of the insert operation. Show the redirected the user to the table list page along with a success message.
+
+The way to show the request data in the console is,
+$output = new \Symfony\Component\Console\Output\ConsoleOutput();
+$output->writeln("<info>$request</info>");
+
+Take away Lesson and Errors
+- When creating tables, always use plurals, like 'categories', 'subcategories', 'products' etc. And when creating models, name the models as their singular form, if table name is 'categories', its corresponding model name must be 'Category', it is essential for laravel to work. Laravel implicitly handles these, so the convention must be followed here.

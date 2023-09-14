@@ -39,6 +39,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::prefix('category')->group(function () {
             Route::get('/all', 'index')->name('allCategory');
             Route::get('/add', 'add')->name('addCategory');
+
+
+            // Database operation methods.
+            Route::post('/store', 'store')->name('storeCategory');
         });
     });
 
