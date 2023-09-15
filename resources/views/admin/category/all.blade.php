@@ -47,6 +47,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if (session('message'))
+                                <div class="alert alert-success">
+                                    {{session('message')}}
+                                </div>
+                            @endif
                             <tr>
                                 <td>1</td>
                                 <td>Samsung</td>

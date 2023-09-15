@@ -29,6 +29,6 @@ class CategoryController extends Controller
             'slug' => strtolower(str_replace(' ', '-', $request->name))
         ]);
 
-        return redirect()->route('allCategory');
+        return redirect()->route('allCategory')->with('message', 'Successfully created a new category!');
     }
 }
