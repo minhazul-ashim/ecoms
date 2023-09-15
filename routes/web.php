@@ -39,10 +39,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::prefix('category')->group(function () {
             Route::get('/all', 'index')->name('allCategory');
             Route::get('/add', 'add')->name('addCategory');
-
+            Route::get('/edit/{id}', 'edit')->name("editCategory");
 
             // Database operation methods.
             Route::post('/store', 'store')->name('storeCategory');
+            Route::post('/update', 'update')->name('updateCategory');
+            Route::get('/delete/{id}', 'delete')->name('deleteCategory');
         });
     });
 
