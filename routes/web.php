@@ -57,6 +57,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
             // API routes;
             Route::post('/store', 'store')->name('storeSubcategory');
             Route::post('/update', 'update')->name('updateSubcategory');
+            Route::get('/delete/{id}', 'delete')->name('deleteSubcategory');
         });
     });
 

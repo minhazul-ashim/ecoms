@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Brick\Math\BigInteger;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
@@ -56,5 +57,13 @@ class SubCategoryController extends Controller
         ]);
 
         return redirect()->route('allSubCategory')->with('message', 'Successfully updated the subcategory.');
+    }
+
+    public function delete($id) {
+        $subcat = SubCategory::findOrFail($id);
+        Subcategory::findOrFail($id)->delete();
+        Category::findOrFail($subcat->category_id)->decrement('subcat_count', 1);
+
+        return redirect()->route('allSubCategory')->with('message', 'Successfully Deleted the Subcategory');
     }
 }
