@@ -10,7 +10,7 @@
                     <h1>Sub Category</h1>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <a href="create-subcategory.html" class="btn btn-primary">New Sub Category</a>
+                    <a href="{{route('addSubCategory')}}" class="btn btn-primary">New Sub Category</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                                         {{ $subcat->product_count }}
                                     </td>
                                     <td>
-                                        <a href="#">
+                                        <a href="{{ route('editSubcategory', $subcat->id) }}">
                                             <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                 <path
