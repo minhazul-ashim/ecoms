@@ -1,6 +1,6 @@
 @extends('admin.layout.template')
 @section('page_title')
-Add Subcategory | ECOMS
+    Add Subcategory | ECOMS
 @endsection
 @section('content')
     <section class="content-header">
@@ -20,37 +20,45 @@ Add Subcategory | ECOMS
     <section class="content">
         <!-- Default box -->
         <div class="container-fluid">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label for="name">Category</label>
-                                <select name="category" id="category" class="form-control">
-                                    <option value="">Electronics</option>
-                                    <option value="">Mobile</option>
-                                </select>
+            <form action="{{ route('storeSubcategory') }}" method="POST">
+                @csrf
+                <div class="card">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                    @endif
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="name">Category</label>
+                                    <select name="category_id" id="category" class="form-control">
+                                        <option value="">Select Option</option>
+                                        @foreach ($categories as $category)
+                                            <option value={{ $category->id }}>{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Name">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="email">Slug</label>
-                                <input type="text" name="slug" id="slug" class="form-control" placeholder="Slug">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="name" class="form-control"
+                                        placeholder="Name">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="pb-5 pt-3">
-                <button class="btn btn-primary">Create</button>
-                <a href="subcategory.html" class="btn btn-outline-dark ml-3">Cancel</a>
-            </div>
+                <div class="pb-5 pt-3">
+                    <button class="btn btn-primary">Create</button>
+                    <a href="subcategory.html" class="btn btn-outline-dark ml-3">Cancel</a>
+                </div>
+            </form>
         </div>
         <!-- /.card -->
     </section>

@@ -53,4 +53,10 @@ Take away Lesson and Errors
 
 17. Delete Category API and methods are integrated.
 
+18. Add Sub Category Functionality implemented.
+
+Take Away Lesson and Errors,
+- If your Model name is SubCategory with capitalization for each words. Then your table name should be 'sub_categories'.
+
+
 

@@ -52,6 +52,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::prefix('subCategory')->group(function () {
             Route::get('/all', 'index')->name('allSubCategory');
             Route::get('/add', 'add')->name('addSubCategory');
+
+            // API routes;
+            Route::post('/store', 'store')->name('storeSubcategory');
         });
     });
 
