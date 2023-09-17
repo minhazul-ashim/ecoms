@@ -58,5 +58,9 @@ Take away Lesson and Errors
 Take Away Lesson and Errors,
 - If your Model name is SubCategory with capitalization for each words. Then your table name should be 'sub_categories'.
 
+19. Edit Subcategory functionality implemented.
+
+20. Delete Subcategory feature implemented.
+
 
 
