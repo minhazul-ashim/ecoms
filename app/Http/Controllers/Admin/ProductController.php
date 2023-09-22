@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -12,6 +14,10 @@ class ProductController extends Controller
     }
 
     public function add () {
-        return view('admin.product.add');
+        $categories = Category::latest()->get();
+        $sub_categories = SubCategory::latest()->get();
+        return view('admin.product.add', compact([
+            "categories", "sub_categories"
+        ]));
     }
 }
