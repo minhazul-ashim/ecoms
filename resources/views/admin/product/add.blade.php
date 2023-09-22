@@ -27,22 +27,22 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label for="title">Title</label>
-                                        <input type="text" name="title" id="title" class="form-control"
-                                            placeholder="Title">
+                                        <label for="name">Product Name</label>
+                                        <input type="text" name="name" id="name" class="form-control"
+                                            placeholder="Product Name">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label for="description" class="d-block">Short Description</label>
-                                        <textarea name="description" class="form-control" id="description" cols="30" rows="10" class="summernote"
+                                        <label for="short_desc" class="d-block">Short Description</label>
+                                        <textarea name="short_desc" class="form-control" id="short_desc" cols="30" rows="10" class="summernote"
                                             placeholder="Short Description"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label for="description" class="d-block">Brief Description</label>
-                                        <textarea name="description" class="form-control" id="description" cols="30" rows="10" class="summernote"
+                                        <label for="brief_desc" class="d-block">Brief Description</label>
+                                        <textarea name="brief_desc" class="form-control" id="brief_desc" cols="30" rows="10" class="summernote"
                                             placeholder="Brief Description"></textarea>
                                     </div>
                                 </div>
@@ -52,11 +52,8 @@
                     <div class="card mb-3">
                         <div class="card-body">
                             <h2 class="h4 mb-3">Media</h2>
-                            <div id="image" class="dropzone dz-clickable">
-                                <div class="dz-message needsclick">
-                                    <br>Drop files here or click to upload.<br><br>
-                                </div>
-                            </div>
+                            <input type="file" name="image" id="image" class="form-control"
+                                accept="image/png, image/gif, image/jpeg, image/jpg, image/webp">
                         </div>
                     </div>
                     <div class="card mb-3">
@@ -79,7 +76,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <input type="number" min="0" name="qty" id="qty"
+                                        <input type="number" min="0" name="stock" id="stock"
                                             class="form-control" placeholder="Stock">
                                     </div>
                                 </div>
@@ -93,19 +90,19 @@
                             <h2 class="h4  mb-3">Product category</h2>
                             <div class="mb-3">
                                 <label for="category">Category</label>
-                                <select name="category" id="category" class="form-control">
-                                    <option value="">Choose</option>
+                                <select name="category_id" id="category_id" class="form-control">
+                                    <option value="{{ null }}">Select One</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="category">Sub category</label>
-                                <select name="sub_category" id="sub_category" class="form-control">
-                                    <option value="{{null}}">Select One</option>
+                                <select name="subcat_id" id="subcat_id" class="form-control">
+                                    <option value="{{ null }}">Select One</option>
                                     @foreach ($sub_categories as $sub_cat)
-                                        <option value="{{$sub_cat->id}}">{{ $sub_cat->name }}</option>
+                                        <option value="{{ $sub_cat->id }}">{{ $sub_cat->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
