@@ -66,6 +66,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
             Route::get('/all', 'index')->name('allProducts');
             Route::get('/add', 'add')->name('addProducts');
         });
+
+        // API routes;
+        Route::post('/store', 'store')->name('storeProduct');
     });
 
     Route::controller(OrderController::class)->group(function () {

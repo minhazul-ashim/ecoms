@@ -20,4 +20,24 @@ class ProductController extends Controller
             "categories", "sub_categories"
         ]));
     }
+
+    // DB methods;
+    public function store(Request $request) {
+
+        $category = Category::findOrFail($request->category_id);
+
+        $subcategory = SubCategory::findOrFail($request->subcat_id);
+
+        $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+        $output->writeln("<info>$category</info>");
+        $output->writeln("<info>$subcategory</info>");
+
+        // $request->validate([
+        //     'name' => 'required|image|mimes:jpeg, png, jpg, webp, gif',
+        //     'short_desc' => 'required',
+        //     'brief_desc' => 'required',
+        //     'price' => 'required',
+        //     'stock' => 'required'
+        // ]);
+    }
 }
